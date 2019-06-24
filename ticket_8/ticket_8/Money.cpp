@@ -1,12 +1,33 @@
 #include "pch.h"
 #include "Money.h"
-#include "iostream"
+#include <string>
 
 Money::Money()
 {
-	ruble = 123;
-	penny[0] = '4';
-	penny[1] = '5';
+	ruble = 0;
+	penny[0] = '0';
+	penny[1] = '0';
+}
+
+void Money::set_money()
+{
+	int bufer;
+	cout << "Введите кол-во рублей: ";
+	cin >> ruble;
+	cout << "Введите кол-во копеек: ";
+	cin >> bufer;
+	if (bufer > 10) //проверка, если ее не будет, то проблемы с нулями в записи в массив при конвертации
+	{
+		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
+		penny[0] = str_bufer[0]; // присваивание копейкам нужные значения
+		penny[1] = str_bufer[1];
+	}
+	else
+	{
+		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
+		penny[0] = '0'; // присваивание копейкам нужные значения
+		penny[1] = str_bufer[0];
+	}
 }
 
 double Money::converter()
@@ -17,16 +38,114 @@ double Money::converter()
 	return result;
 }
 
-/*Money Money::operator-(Money & obj)
+Money Money::multiplication(double k)
 {
-	return (this->converter() > obj.converter());
+	Money temp;
+	double bufer = this->converter() * k;
+	temp.ruble = bufer; // присвоится только целая часть тк ruble long int
+	bufer = (bufer - temp.ruble) * 100; // кол-во копеек
+	if (bufer > 10) //проверка, если ее не будет, то проблемы с нулями в записи в массив при конвертации
+	{
+		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
+		temp.penny[0] = str_bufer[0]; // присваивание копейкам нужные значения
+		temp.penny[1] = str_bufer[1];
+	}
+	else
+	{
+		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
+		temp.penny[0] = '0'; // присваивание копейкам нужные значения
+		temp.penny[1] = str_bufer[0];
+	}
+	return temp;
+}
+
+Money Money::division(double k)
+{
+	Money temp;
+	double bufer = this->converter() / k;
+	temp.ruble = bufer; // присвоится только целая часть тк ruble long int
+	bufer = (bufer - temp.ruble) * 100; // кол-во копеек
+	if (bufer > 10) //проверка, если ее не будет, то проблемы с нулями в записи в массив при конвертации
+	{
+		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
+		temp.penny[0] = str_bufer[0]; // присваивание копейкам нужные значения
+		temp.penny[1] = str_bufer[1];
+	}
+	else
+	{
+		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
+		temp.penny[0] = '0'; // присваивание копейкам нужные значения
+		temp.penny[1] = str_bufer[0];
+	}
+	return temp;
+}
+
+Money Money::operator+(Money & obj)
+{
+	Money temp;
+	double bufer;
+	bufer = this->converter() + obj.converter();
+	temp.ruble = bufer; // присвоится только целая часть тк ruble long int
+	bufer = (bufer - temp.ruble) * 100; // кол-во копеек
+	if (bufer > 10) //проверка, если ее не будет, то проблемы с нулями в записи в массив при конвертации
+	{
+		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
+		temp.penny[0] = str_bufer[0]; // присваивание копейкам нужные значения
+		temp.penny[1] = str_bufer[1];
+	}
+	else
+	{
+		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
+		temp.penny[0] = '0'; // присваивание копейкам нужные значения
+		temp.penny[1] = str_bufer[0];
+	}
+	return temp;
+}
+
+Money Money::operator-(Money & obj)
+{
+	Money temp;
+	double bufer;
+	bufer = this->converter() - obj.converter();
+	temp.ruble = bufer; // присвоится только целая часть тк ruble long int
+	bufer = (bufer - temp.ruble) * 100; // кол-во копеек
+	if (bufer > 10)
+	{
+		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
+		temp.penny[0] = str_bufer[0]; // присваивание копейкам нужные значения
+		temp.penny[1] = str_bufer[1];
+	}
+	else
+	{
+		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
+		temp.penny[0] = '0'; // присваивание копейкам нужные значения
+		temp.penny[1] = str_bufer[0];
+	}
+	return temp;
 }
 
 Money Money::operator/(Money & obj)
 {
-	return (this->converter() > obj.converter());
+	Money temp;
+	double bufer;
+	bufer = this->converter() / obj.converter();
+	temp.ruble = bufer; // присвоится только целая часть тк ruble long int
+	bufer = (bufer - temp.ruble) * 100; // кол-во копеек
+	if (bufer > 10)
+	{
+		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
+		temp.penny[0] = str_bufer[0]; // присваивание копейкам нужные значения
+		temp.penny[1] = str_bufer[1];
+	}
+	else
+	{
+		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
+		temp.penny[0] = '0'; // присваивание копейкам нужные значения
+		temp.penny[1] = str_bufer[0];
+	}
+	return temp;
 }
-*/
+
 bool Money::operator==(Money & obj)
 {
 	return (this->converter() == obj.converter());
@@ -57,15 +176,6 @@ Money &Money::operator=(const Money &obj)
 
 ostream &operator<<(ostream &stream, Money &obj)
 {
-	stream << "Сумма: " << obj.ruble << "," << obj.penny[0] << obj.penny[1] << endl;
+	stream << "Результат: " << obj.ruble << "," << obj.penny[0] << obj.penny[1] << endl;
 	return stream;
-}
-
-Money Money::operator+(Money & obj)
-{
-	Money temp;
-	temp.ruble = this->ruble + obj.ruble;
-	temp.penny[0] = this->penny[0] + obj.penny[0];
-	temp.penny[1] = this->penny[1] + obj.penny[1];
-	return temp;
 }
