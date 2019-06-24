@@ -1,4 +1,4 @@
-#include "pch.h"
+п»ї#include "pch.h"
 #include "Money.h"
 #include <string>
 
@@ -12,20 +12,20 @@ Money::Money()
 void Money::set_money()
 {
 	int bufer;
-	cout << "Введите кол-во рублей: ";
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЂСѓР±Р»РµР№: ";
 	cin >> ruble;
-	cout << "Введите кол-во копеек: ";
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ РєРѕРїРµРµРє: ";
 	cin >> bufer;
-	if (bufer > 10) //проверка, если ее не будет, то проблемы с нулями в записи в массив при конвертации
+	if (bufer > 10) //РїСЂРѕРІРµСЂРєР°, РµСЃР»Рё РµРµ РЅРµ Р±СѓРґРµС‚, С‚Рѕ РїСЂРѕР±Р»РµРјС‹ СЃ РЅСѓР»СЏРјРё РІ Р·Р°РїРёСЃРё РІ РјР°СЃСЃРёРІ РїСЂРё РєРѕРЅРІРµСЂС‚Р°С†РёРё
 	{
-		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
-		penny[0] = str_bufer[0]; // присваивание копейкам нужные значения
+		string str_bufer = to_string(bufer); //РїРµСЂРµРІРѕРґ РєРѕР»-РІР° РєРѕРїРµРµРє РІ string 
+		penny[0] = str_bufer[0]; // РїСЂРёСЃРІР°РёРІР°РЅРёРµ РєРѕРїРµР№РєР°Рј РЅСѓР¶РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
 		penny[1] = str_bufer[1];
 	}
 	else
 	{
-		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
-		penny[0] = '0'; // присваивание копейкам нужные значения
+		string str_bufer = to_string(bufer); //РїРµСЂРµРІРѕРґ РєРѕР»-РІР° РєРѕРїРµРµРє РІ string 
+		penny[0] = '0'; // РїСЂРёСЃРІР°РёРІР°РЅРёРµ РєРѕРїРµР№РєР°Рј РЅСѓР¶РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
 		penny[1] = str_bufer[0];
 	}
 }
@@ -42,18 +42,18 @@ Money Money::multiplication(double k)
 {
 	Money temp;
 	double bufer = this->converter() * k;
-	temp.ruble = bufer; // присвоится только целая часть тк ruble long int
-	bufer = (bufer - temp.ruble) * 100; // кол-во копеек
-	if (bufer > 10) //проверка, если ее не будет, то проблемы с нулями в записи в массив при конвертации
+	temp.ruble = bufer; // РїСЂРёСЃРІРѕРёС‚СЃСЏ С‚РѕР»СЊРєРѕ С†РµР»Р°СЏ С‡Р°СЃС‚СЊ С‚Рє ruble long int
+	bufer = (bufer - temp.ruble) * 100; // РєРѕР»-РІРѕ РєРѕРїРµРµРє
+	if (bufer > 10) //РїСЂРѕРІРµСЂРєР°, РµСЃР»Рё РµРµ РЅРµ Р±СѓРґРµС‚, С‚Рѕ РїСЂРѕР±Р»РµРјС‹ СЃ РЅСѓР»СЏРјРё РІ Р·Р°РїРёСЃРё РІ РјР°СЃСЃРёРІ РїСЂРё РєРѕРЅРІРµСЂС‚Р°С†РёРё
 	{
-		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
-		temp.penny[0] = str_bufer[0]; // присваивание копейкам нужные значения
+		string str_bufer = to_string(bufer); //РїРµСЂРµРІРѕРґ РєРѕР»-РІР° РєРѕРїРµРµРє РІ string 
+		temp.penny[0] = str_bufer[0]; // РїСЂРёСЃРІР°РёРІР°РЅРёРµ РєРѕРїРµР№РєР°Рј РЅСѓР¶РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
 		temp.penny[1] = str_bufer[1];
 	}
 	else
 	{
-		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
-		temp.penny[0] = '0'; // присваивание копейкам нужные значения
+		string str_bufer = to_string(bufer); //РїРµСЂРµРІРѕРґ РєРѕР»-РІР° РєРѕРїРµРµРє РІ string 
+		temp.penny[0] = '0'; // РїСЂРёСЃРІР°РёРІР°РЅРёРµ РєРѕРїРµР№РєР°Рј РЅСѓР¶РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
 		temp.penny[1] = str_bufer[0];
 	}
 	return temp;
@@ -63,18 +63,18 @@ Money Money::division(double k)
 {
 	Money temp;
 	double bufer = this->converter() / k;
-	temp.ruble = bufer; // присвоится только целая часть тк ruble long int
-	bufer = (bufer - temp.ruble) * 100; // кол-во копеек
-	if (bufer > 10) //проверка, если ее не будет, то проблемы с нулями в записи в массив при конвертации
+	temp.ruble = bufer; // РїСЂРёСЃРІРѕРёС‚СЃСЏ С‚РѕР»СЊРєРѕ С†РµР»Р°СЏ С‡Р°СЃС‚СЊ С‚Рє ruble long int
+	bufer = (bufer - temp.ruble) * 100; // РєРѕР»-РІРѕ РєРѕРїРµРµРє
+	if (bufer > 10) //РїСЂРѕРІРµСЂРєР°, РµСЃР»Рё РµРµ РЅРµ Р±СѓРґРµС‚, С‚Рѕ РїСЂРѕР±Р»РµРјС‹ СЃ РЅСѓР»СЏРјРё РІ Р·Р°РїРёСЃРё РІ РјР°СЃСЃРёРІ РїСЂРё РєРѕРЅРІРµСЂС‚Р°С†РёРё
 	{
-		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
-		temp.penny[0] = str_bufer[0]; // присваивание копейкам нужные значения
+		string str_bufer = to_string(bufer); //РїРµСЂРµРІРѕРґ РєРѕР»-РІР° РєРѕРїРµРµРє РІ string 
+		temp.penny[0] = str_bufer[0]; // РїСЂРёСЃРІР°РёРІР°РЅРёРµ РєРѕРїРµР№РєР°Рј РЅСѓР¶РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
 		temp.penny[1] = str_bufer[1];
 	}
 	else
 	{
-		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
-		temp.penny[0] = '0'; // присваивание копейкам нужные значения
+		string str_bufer = to_string(bufer); //РїРµСЂРµРІРѕРґ РєРѕР»-РІР° РєРѕРїРµРµРє РІ string 
+		temp.penny[0] = '0'; // РїСЂРёСЃРІР°РёРІР°РЅРёРµ РєРѕРїРµР№РєР°Рј РЅСѓР¶РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
 		temp.penny[1] = str_bufer[0];
 	}
 	return temp;
@@ -85,18 +85,18 @@ Money Money::operator+(Money & obj)
 	Money temp;
 	double bufer;
 	bufer = this->converter() + obj.converter();
-	temp.ruble = bufer; // присвоится только целая часть тк ruble long int
-	bufer = (bufer - temp.ruble) * 100; // кол-во копеек
-	if (bufer > 10) //проверка, если ее не будет, то проблемы с нулями в записи в массив при конвертации
+	temp.ruble = bufer; // РїСЂРёСЃРІРѕРёС‚СЃСЏ С‚РѕР»СЊРєРѕ С†РµР»Р°СЏ С‡Р°СЃС‚СЊ С‚Рє ruble long int
+	bufer = (bufer - temp.ruble) * 100; // РєРѕР»-РІРѕ РєРѕРїРµРµРє
+	if (bufer > 10) //РїСЂРѕРІРµСЂРєР°, РµСЃР»Рё РµРµ РЅРµ Р±СѓРґРµС‚, С‚Рѕ РїСЂРѕР±Р»РµРјС‹ СЃ РЅСѓР»СЏРјРё РІ Р·Р°РїРёСЃРё РІ РјР°СЃСЃРёРІ РїСЂРё РєРѕРЅРІРµСЂС‚Р°С†РёРё
 	{
-		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
-		temp.penny[0] = str_bufer[0]; // присваивание копейкам нужные значения
+		string str_bufer = to_string(bufer); //РїРµСЂРµРІРѕРґ РєРѕР»-РІР° РєРѕРїРµРµРє РІ string 
+		temp.penny[0] = str_bufer[0]; // РїСЂРёСЃРІР°РёРІР°РЅРёРµ РєРѕРїРµР№РєР°Рј РЅСѓР¶РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
 		temp.penny[1] = str_bufer[1];
 	}
 	else
 	{
-		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
-		temp.penny[0] = '0'; // присваивание копейкам нужные значения
+		string str_bufer = to_string(bufer); //РїРµСЂРµРІРѕРґ РєРѕР»-РІР° РєРѕРїРµРµРє РІ string 
+		temp.penny[0] = '0'; // РїСЂРёСЃРІР°РёРІР°РЅРёРµ РєРѕРїРµР№РєР°Рј РЅСѓР¶РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
 		temp.penny[1] = str_bufer[0];
 	}
 	return temp;
@@ -107,18 +107,18 @@ Money Money::operator-(Money & obj)
 	Money temp;
 	double bufer;
 	bufer = this->converter() - obj.converter();
-	temp.ruble = bufer; // присвоится только целая часть тк ruble long int
-	bufer = (bufer - temp.ruble) * 100; // кол-во копеек
+	temp.ruble = bufer; // РїСЂРёСЃРІРѕРёС‚СЃСЏ С‚РѕР»СЊРєРѕ С†РµР»Р°СЏ С‡Р°СЃС‚СЊ С‚Рє ruble long int
+	bufer = (bufer - temp.ruble) * 100; // РєРѕР»-РІРѕ РєРѕРїРµРµРє
 	if (bufer > 10)
 	{
-		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
-		temp.penny[0] = str_bufer[0]; // присваивание копейкам нужные значения
+		string str_bufer = to_string(bufer); //РїРµСЂРµРІРѕРґ РєРѕР»-РІР° РєРѕРїРµРµРє РІ string 
+		temp.penny[0] = str_bufer[0]; // РїСЂРёСЃРІР°РёРІР°РЅРёРµ РєРѕРїРµР№РєР°Рј РЅСѓР¶РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
 		temp.penny[1] = str_bufer[1];
 	}
 	else
 	{
-		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
-		temp.penny[0] = '0'; // присваивание копейкам нужные значения
+		string str_bufer = to_string(bufer); //РїРµСЂРµРІРѕРґ РєРѕР»-РІР° РєРѕРїРµРµРє РІ string 
+		temp.penny[0] = '0'; // РїСЂРёСЃРІР°РёРІР°РЅРёРµ РєРѕРїРµР№РєР°Рј РЅСѓР¶РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
 		temp.penny[1] = str_bufer[0];
 	}
 	return temp;
@@ -129,18 +129,18 @@ Money Money::operator/(Money & obj)
 	Money temp;
 	double bufer;
 	bufer = this->converter() / obj.converter();
-	temp.ruble = bufer; // присвоится только целая часть тк ruble long int
-	bufer = (bufer - temp.ruble) * 100; // кол-во копеек
+	temp.ruble = bufer; // РїСЂРёСЃРІРѕРёС‚СЃСЏ С‚РѕР»СЊРєРѕ С†РµР»Р°СЏ С‡Р°СЃС‚СЊ С‚Рє ruble long int
+	bufer = (bufer - temp.ruble) * 100; // РєРѕР»-РІРѕ РєРѕРїРµРµРє
 	if (bufer > 10)
 	{
-		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
-		temp.penny[0] = str_bufer[0]; // присваивание копейкам нужные значения
+		string str_bufer = to_string(bufer); //РїРµСЂРµРІРѕРґ РєРѕР»-РІР° РєРѕРїРµРµРє РІ string 
+		temp.penny[0] = str_bufer[0]; // РїСЂРёСЃРІР°РёРІР°РЅРёРµ РєРѕРїРµР№РєР°Рј РЅСѓР¶РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
 		temp.penny[1] = str_bufer[1];
 	}
 	else
 	{
-		string str_bufer = to_string(bufer); //перевод кол-ва копеек в string 
-		temp.penny[0] = '0'; // присваивание копейкам нужные значения
+		string str_bufer = to_string(bufer); //РїРµСЂРµРІРѕРґ РєРѕР»-РІР° РєРѕРїРµРµРє РІ string 
+		temp.penny[0] = '0'; // РїСЂРёСЃРІР°РёРІР°РЅРёРµ РєРѕРїРµР№РєР°Рј РЅСѓР¶РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
 		temp.penny[1] = str_bufer[0];
 	}
 	return temp;
@@ -176,6 +176,6 @@ Money &Money::operator=(const Money &obj)
 
 ostream &operator<<(ostream &stream, Money &obj)
 {
-	stream << "Результат: " << obj.ruble << "," << obj.penny[0] << obj.penny[1] << endl;
+	stream << "Р РµР·СѓР»СЊС‚Р°С‚: " << obj.ruble << "," << obj.penny[0] << obj.penny[1] << endl;
 	return stream;
 }
