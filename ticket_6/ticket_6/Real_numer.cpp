@@ -1,4 +1,4 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include "Real_numer.h"
 
 
@@ -9,11 +9,11 @@ Real_numer::Real_numer()
 
 void Real_numer::output()
 {
-	cout << "Äåéñòâèòåëüíîå ÷èñëî: " << x << endl;
+	cout << "Ð”ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: " << x << endl;
 }
 
 void Real_numer::set_info()
 {
-	cout << "Ââåäèòå äåéñòâèòåëüíîå ÷èñëî: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
 	cin >> x;
 }

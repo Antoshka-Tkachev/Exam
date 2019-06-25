@@ -35,9 +35,6 @@
     <ClCompile Include="ticket_6.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Number.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Real_numer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>

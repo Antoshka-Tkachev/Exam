@@ -1,4 +1,4 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include "Complex_number.h"
 
 
@@ -11,16 +11,16 @@ Complex_number::Complex_number()
 void Complex_number::output()
 {
 	if (Im >= 0)
-		cout << "Êîìïëåêñêîå ÷èñëî: " << Re << "+" << Im << "*i" << endl;
+		cout << "ÐšÐ¾Ð¼Ð¿Ð»ÐµÐºÑÐºÐ¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: " << Re << "+" << Im << "*i" << endl;
 	else
-		cout << "Êîìïëåêñíîå ÷èñëî: " << Re << Im << "*i" << endl;
+		cout << "ÐšÐ¾Ð¼Ð¿Ð»ÐµÐºÑÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: " << Re << Im << "*i" << endl;
 }
 
 void Complex_number::set_info()
 {
-	cout << "\nÊîìïëåêñíîå ÷èñëî:\n";
-	cout << "Ââåäèòå äåéñòâèòåëüíóþ ÷àñòü: ";
+	cout << "\nÐšÐ¾Ð¼Ð¿Ð»ÐµÐºÑÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾:\n";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½ÑƒÑŽ Ñ‡Ð°ÑÑ‚ÑŒ: ";
 	cin >> Re;
-	cout << "Ââåäèòå ìíèìóþ ÷àñòü: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¼Ð½Ð¸Ð¼ÑƒÑŽ Ñ‡Ð°ÑÑ‚ÑŒ: ";
 	cin >> Im;
 }
