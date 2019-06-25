@@ -1,21 +1,21 @@
-#include "pch.h"
+п»ї#include "pch.h"
 #include "catalog.h"
 
 void catalog::add_visitor()
 {
 	string answer;
-	cout << "Добавить посетителя?\n";
+	cout << "Р”РѕР±Р°РІРёС‚СЊ РїРѕСЃРµС‚РёС‚РµР»СЏ?\n";
 	cin >> answer;
 	visitor bufer;
-	if (answer == "Да")
+	if (answer == "Р”Р°")
 	{
 		do
 		{
 			bufer.set_info();
 			visitors.push_back(bufer);
-			cout << "\nДобавить посетителя?\n";
+			cout << "\nР”РѕР±Р°РІРёС‚СЊ РїРѕСЃРµС‚РёС‚РµР»СЏ?\n";
 			cin >> answer;
-		} while (answer != "Нет");
+		} while (answer != "РќРµС‚");
 	}
 }
 
@@ -23,17 +23,17 @@ void catalog::add_visitor()
 void catalog::search()
 {
 	int answer;
-	cout << "\nВыберете желаемый вариант:\n"
-		<< "1. Поиск по ФИО\n"
-		<< "2. Поиск по номеру автомобиля\n"
-		<< "Введите номер желаемого варианта: ";
+	cout << "\nР’С‹Р±РµСЂРµС‚Рµ Р¶РµР»Р°РµРјС‹Р№ РІР°СЂРёР°РЅС‚:\n"
+		<< "1. РџРѕРёСЃРє РїРѕ Р¤РРћ\n"
+		<< "2. РџРѕРёСЃРє РїРѕ РЅРѕРјРµСЂСѓ Р°РІС‚РѕРјРѕР±РёР»СЏ\n"
+		<< "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р¶РµР»Р°РµРјРѕРіРѕ РІР°СЂРёР°РЅС‚Р°: ";
 	cin >> answer;
-	string temp; // переменная для поиска
+	string temp; // РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ РїРѕРёСЃРєР°
 	if (answer == 1)
 	{
-		cout << "Введите ФИО: ";
+		cout << "Р’РІРµРґРёС‚Рµ Р¤РРћ: ";
 		cin >> temp;
-		cout << "\nНайденные посетители:\n";
+		cout << "\nРќР°Р№РґРµРЅРЅС‹Рµ РїРѕСЃРµС‚РёС‚РµР»Рё:\n";
 		for (int i = 0; i < visitors.size(); i++)
 		{
 			if (visitors[i].get_FIO() == temp)
@@ -44,9 +44,9 @@ void catalog::search()
 	}
 	else
 	{
-		cout << "Введите номер автомобиля: ";
+		cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р°РІС‚РѕРјРѕР±РёР»СЏ: ";
 		cin >> temp;
-		cout << "\nНайденные посетители:\n";
+		cout << "\nРќР°Р№РґРµРЅРЅС‹Рµ РїРѕСЃРµС‚РёС‚РµР»Рё:\n";
 		for (int i = 0; i < visitors.size(); i++)
 		{
 			if (visitors[i].get_number_car() == temp)
@@ -62,7 +62,7 @@ void catalog::delete_visitor()
 {
 	string temp;
 	int metka;
-	cout << "\nВведите ФИО постетителя, которого хотите удалить: ";
+	cout << "\nР’РІРµРґРёС‚Рµ Р¤РРћ РїРѕСЃС‚РµС‚РёС‚РµР»СЏ, РєРѕС‚РѕСЂРѕРіРѕ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ: ";
 	cin >> temp;
 	for (int i = 0; i < visitors.size(); i++)
 	{
