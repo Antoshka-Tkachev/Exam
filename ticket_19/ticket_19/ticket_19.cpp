@@ -1,8 +1,8 @@
 ﻿#include "pch.h"
 #include <iostream>
 #include <Windows.h>
-#include "visitor.h"
 #include "catalog.h"
+#include "visitor.h"
 
 using namespace std;
 
@@ -13,7 +13,7 @@ int main()
 	catalog spisok;
 	spisok.add_visitor();
 	spisok.delete_visitor();
-	change(spisok);
+	spisok.change();
 	spisok.search();
 	return 0;
 }

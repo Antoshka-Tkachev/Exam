@@ -73,3 +73,63 @@ void catalog::delete_visitor()
 	}
 	visitors.erase(visitors.begin() + metka);
 }
+
+void catalog::change()
+{
+	string temp; // для имени
+	int metka; // для поиска элемнта в массиве
+	int choice; // для выбора в меню
+	cout << "\nВведите ФИО постетителя, информацию о котором хотите изменить: ";
+	cin >> temp;
+
+	for (int i = 0; i < visitors.size(); i++) // поиск по масиву
+	{
+		if (visitors[i].get_FIO() == temp)
+		{
+			metka = i; // записываем номер найденного элемента
+		}
+	}
+	cout << "\nВ какой графе хотите сделать изменение?\n"
+		<< "1. ФИО\n"
+		<< "2. Номер телефона\n"
+		<< "3. Номер автомобиля\n"
+		<< "4. Дата рождения\n"
+		<< "Введите номер выбранного варианта: ";
+	cin >> choice;
+
+	switch (choice) // выбор изменения в зависимости от выбранного
+	{
+	case 1:
+	{
+		cout << "\nВведите новое ФИО: ";
+		cin.ignore(32767, '\n');    // игнорим "Enter" для getline
+		visitors[metka].set_FIO();
+	}
+	break;
+
+	case 2:
+	{
+		cout << "\nВведите новый номер телефона ";
+		visitors[metka].set_number_phone();
+	}
+	break;
+
+	case 3:
+	{
+		cout << "\nВведите новый номер автомобиля: ";
+		visitors[metka].set_number_car();
+	}
+	break;
+
+	case 4:
+	{
+		cout << "\nВведите новую дату рождения: ";
+		visitors[metka].set_date_of_birth();
+	}
+	break;
+
+	default:
+		break;
+	}
+	cout << "Информация изменена успешно!";
+}

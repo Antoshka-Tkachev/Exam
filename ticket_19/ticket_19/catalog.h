@@ -14,5 +14,6 @@ public:
 	void add_visitor();
 	void search();
 	void delete_visitor();
+	void change();
 };
 
