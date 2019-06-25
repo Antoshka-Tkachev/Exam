@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "catalog.h"
 #include <vector>
 
 using namespace std;
@@ -18,6 +17,6 @@ public:
 	void output();
 	string get_FIO();
 	string get_number_car();
-	//friend void change(vector <visitor> &visitors);
+	friend void change(vector <visitor> &visitors);
 };
 

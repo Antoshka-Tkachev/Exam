@@ -13,7 +13,7 @@ int main()
 	catalog spisok;
 	spisok.add_visitor();
 	spisok.delete_visitor();
-	//change(spisok);
+	change(spisok);
 	spisok.search();
 	return 0;
 }

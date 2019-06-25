@@ -33,7 +33,7 @@ string visitor::get_FIO()
 	return FIO;
 }
 
-/*void change(vector <visitor> &visitors)
+void change(vector <visitor> &visitors)
 {
 	string temp; // для имени
 	int metka; // для поиска элемнта в массиве
@@ -91,4 +91,4 @@ string visitor::get_FIO()
 		break;
 	}
 	cout << "Информация изменена успешно!";
-}*/
+}
